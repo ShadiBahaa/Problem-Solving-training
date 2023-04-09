@@ -62,3 +62,23 @@ int main(){
     cout<<fixed<<ans<<endl;
 }
 ```
+## 4- Beginner Contest 120 B
+Problem Link:
+https://atcoder.jp/contests/abc120/tasks/abc120_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b,k;
+    cin>>a>>b>>k;
+    for (int i = max(a,b); i>=1; --i){
+        if (a%i == 0 && b%i ==0 && k==1){
+            cout<<i<<endl;
+            return 0;
+        }else if (a%i == 0 && b%i == 0){
+            k--;
+        }
+
+    }
+}
+```
