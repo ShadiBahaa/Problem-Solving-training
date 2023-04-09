@@ -97,3 +97,28 @@ int main(){
     cout<<mp[b]<<endl;
 }
 ```
+## 7-	Beginner Contest 123 A
+Problem Link:
+https://atcoder.jp/contests/abc123/tasks/abc123_a
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int arr[5];
+    for (int i = 0; i<5; ++i){
+        cin>>arr[i];
+    }
+    int k;
+    cin>>k;
+    for (int i = 0; i<5; ++i){
+        for (int j = i+1; j<5; ++j){
+            if (arr[j]-arr[i]>k){
+                cout<<":("<<endl;
+                return 0;
+            }
+        }
+    }
+    cout<<"Yay!"<<endl;
+}
+```
