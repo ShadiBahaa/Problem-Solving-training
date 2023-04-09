@@ -45,3 +45,28 @@ int main(){
     cout<<((sum==0)?"Yes":"No")<<endl;
 }
 ```
+## 3- Beginner Contest 189 B
+Problem Link:
+https://atcoder.jp/contests/abc189/tasks/abc189_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    int x;
+    cin>>n>>x;
+    x*=100;
+    int sum = 0;
+    for (int i = 0; i<n ;++i){
+        int v,p;
+        cin>>v>>p;
+        int am = v*p;
+        sum+=am;
+        if (sum>x){
+            cout<<i+1<<endl;
+            return 0;
+        }
+    }
+    cout<<-1<<endl;
+}
+```
