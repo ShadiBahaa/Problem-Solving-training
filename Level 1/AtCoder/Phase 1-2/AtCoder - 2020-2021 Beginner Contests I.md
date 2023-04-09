@@ -16,3 +16,15 @@ int main(){
     cout<<max(sum1,sum2)<<endl;
 }
 ```
+## 2-	Beginner Contest 188 A
+Problem Link:
+https://atcoder.jp/contests/abc188/tasks/abc188_a
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int x,y;
+    cin>>x>>y;
+    cout<<((min(x,y)+3>max(x,y))?"Yes":"No")<<endl;
+}
+```
