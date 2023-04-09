@@ -40,3 +40,25 @@ int main(){
     cout<<ans<<endl;
 }
 ```
+## 3-	Beginner Contest 119 B
+Problem Link:
+https://atcoder.jp/contests/abc119/tasks/abc119_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    map<string,double> mp;
+    mp["JPY"] = 1;
+    mp["BTC"] = 380000;
+    double ans = 0;
+    int n;
+    cin>>n;
+    while (n--){
+        double x;
+        string s;
+        cin>>x>>s;
+        ans+=x*mp[s];
+    }
+    cout<<fixed<<ans<<endl;
+}
+```
