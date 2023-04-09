@@ -107,3 +107,30 @@ int main(){
 
 }
 ```
+## 6- Beginner Contest 122 B
+Problem Link:
+https://atcoder.jp/contests/abc122/tasks/abc122_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+    int ans = 0;
+    string t = "ACGT";
+    for (int i = 0; i<s.size(); ++i){
+        for (int j = 1; j<=s.size(); ++j){
+            string sub = s.substr(i,j);
+            bool yes = true;
+            for (char c:sub){
+                if (t.find(c)==string::npos){
+                    yes = false;
+                    break;
+                }
+            }
+            if (yes)ans = max(ans,(int)sub.size());
+        }
+    }
+    cout<<ans<<endl;
+}
+```
