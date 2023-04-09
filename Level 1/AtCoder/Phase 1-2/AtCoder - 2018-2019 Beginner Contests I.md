@@ -122,3 +122,16 @@ int main(){
     cout<<"Yay!"<<endl;
 }
 ```
+## 8-	Beginner Contest 124 A
+Problem Link:
+https://atcoder.jp/contests/abc124/tasks/abc124_a
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b;
+    cin>>a>>b;
+    cout<<max(2*a-1,max(2*b-1,a+b))<<endl;
+}
+```
