@@ -66,3 +66,16 @@ int main(){
     cout<<min(c,b/a)<<endl;
 }
 ```
+## 5-	Beginner Contest 121 A
+Problem Link:
+https://atcoder.jp/contests/abc121/tasks/abc121_a
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int H,W,h,w;
+    cin>>H>>W>>h>>w;
+    cout<<H*W-(h*W+w*(H-h))<<endl;
+}
+```
