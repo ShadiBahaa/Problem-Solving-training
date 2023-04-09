@@ -45,3 +45,28 @@ int main(){
     }
 }
 ```
+## 3-	Beginner Contest 66 B
+Problem Link:
+https://atcoder.jp/contests/abc066/tasks/abc066_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+bool check(string s){
+    for (int i = 0; i<s.size()/2; ++i){
+        if (s[i]!=s[i+s.size()/2])return false;
+    }
+    return true;
+}
+int main(){
+    string s;
+    cin>>s;
+    s.pop_back();
+    while (true){
+        if (s.size()%2==0 && check(s)){
+            cout<<s.size()<<endl;
+            return 0;
+        }
+        s.pop_back();
+    }
+}
+```
