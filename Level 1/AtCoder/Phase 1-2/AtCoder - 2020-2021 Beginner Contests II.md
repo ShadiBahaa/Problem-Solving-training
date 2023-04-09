@@ -172,3 +172,19 @@ int main(){
     cout<<ans<<endl;
 }
 ```
+## 8-	Beginner Contest 196 B
+Problem Link:
+https://atcoder.jp/contests/abc196/tasks/abc196_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+    for (char c:s){
+        if (c=='.')break;
+        cout<<c;
+    }
+    cout<<endl;
+}
+```
