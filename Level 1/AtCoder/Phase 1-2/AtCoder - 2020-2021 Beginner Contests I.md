@@ -116,3 +116,15 @@ int main(){
     }
 }
 ```
+## 8-	Beginner Contest 196 A
+Problem Link:
+https://atcoder.jp/contests/abc196/tasks/abc196_a
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    cout<<b-c<<endl;
+}
+```
