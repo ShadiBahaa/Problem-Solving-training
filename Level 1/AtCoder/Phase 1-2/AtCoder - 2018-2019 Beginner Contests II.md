@@ -134,3 +134,32 @@ int main(){
     cout<<ans<<endl;
 }
 ```
+## 7-	Beginner Contest 123 B
+Problem Link:
+https://atcoder.jp/contests/abc123/tasks/abc123_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int num = -1,dif = -1;
+    int arr[5];
+    int sum = 0;
+    for (int i = 0; i<5; ++i){
+        cin>>arr[i];
+        int tmp = (arr[i]/10+1)*10-arr[i];
+        if (arr[i]%10 && tmp>dif){
+            dif = tmp;
+            num = i;
+        }
+    }
+    for (int i = 0; i<5; ++i){
+        if (i==num){
+            sum+=arr[i];
+            continue;
+        }
+        sum+=arr[i];
+        if (arr[i]%10)sum+=(arr[i]/10+1)*10-arr[i];
+    }
+    cout<<sum<<endl;
+}
+```
