@@ -2,6 +2,7 @@
 ## 1-	Beginner Contest 117 A
 Problem Link:
 https://atcoder.jp/contests/abc117/tasks/abc117_a
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
