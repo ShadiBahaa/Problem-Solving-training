@@ -79,3 +79,21 @@ int main(){
     cout<<H*W-(h*W+w*(H-h))<<endl;
 }
 ```
+## 6-	Beginner Contest 122 A
+Problem Link:
+https://atcoder.jp/contests/abc122/tasks/abc122_a
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    map<char,char> mp;
+    mp['A'] = 'T';
+    mp['T'] = 'A';
+    mp['C'] = 'G';
+    mp['G'] = 'C';
+    char b;
+    cin>>b;
+    cout<<mp[b]<<endl;
+}
+```
