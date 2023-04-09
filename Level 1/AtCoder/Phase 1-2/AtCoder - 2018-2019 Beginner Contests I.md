@@ -29,3 +29,27 @@ int main(){
     }
 }
 ```
+## 3-	Beginner Contest 119 A
+Problem Link:
+https://atcoder.jp/contests/abc119/tasks/abc119_a
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+    string year = s.substr(0,4);
+    string month = s.substr(5,2);
+    string day = s.substr(8);
+    if (year<"2019"){
+        cout<<"Heisei"<<endl;
+    }else if (year=="2019" && month<"04"){
+        cout<<"Heisei"<<endl;
+    }else if (year=="2019" && month=="04" && day<="30"){
+        cout<<"Heisei"<<endl;
+    }else {
+        cout<<"TBD"<<endl;
+    }
+}
+```
