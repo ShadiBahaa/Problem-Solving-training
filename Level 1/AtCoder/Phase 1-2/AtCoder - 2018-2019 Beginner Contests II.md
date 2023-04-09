@@ -163,3 +163,25 @@ int main(){
     cout<<sum<<endl;
 }
 ```
+## 8-	Beginner Contest 124 B
+Problem Link:
+https://atcoder.jp/contests/abc124/tasks/abc124_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int maxi = 0;
+    int ans = 0;
+    for (int i = 0; i<n; ++i){
+        int x;
+        cin>>x;
+        if (x>=maxi){
+            ans++;
+            maxi = x;
+        }
+    }
+    cout<<ans<<endl;
+}
+```
