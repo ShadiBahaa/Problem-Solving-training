@@ -51,4 +51,16 @@ int main(){
     cout<<arr[0]+arr[1]<<endl;
 }
 ```
-
+## 4- Beginner Contest 67 A
+Problem Link:
+https://atcoder.jp/contests/abc067/tasks/abc067_a
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b;
+    cin>>a>>b;
+    if (a%3 && b%3 && (a+b)%3)cout<<"Impossible"<<endl;
+    else cout<<"Possible"<<endl;
+}
+```
