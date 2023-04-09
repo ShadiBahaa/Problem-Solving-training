@@ -91,3 +91,21 @@ int main(){
     else cout<<"No"<<endl;
 }
 ```
+## 5- Beginner Contest 191 B
+Problem Link:
+https://atcoder.jp/contests/abc191/tasks/abc191_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,x;
+    cin>>n>>x;
+    for (int i = 0; i<n; ++i){
+        int a;cin>>a;
+        if (a!=x){
+            cout<<a<<" ";
+        }
+    }
+    cout<<endl;
+}
+```
