@@ -82,3 +82,28 @@ int main(){
     }
 }
 ```
+## 5- Beginner Contest 121 B
+Problem Link:
+https://atcoder.jp/contests/abc121/tasks/abc121_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,m,c;
+    cin>>n>>m>>c;
+    int b[m];
+    int ans = 0;
+    for (int i = 0; i<m ;++i)cin>>b[i];
+    for (int i = 0; i<n ;++i){
+        int code = c;
+        for (int j = 0; j<m; ++j){
+            int a;
+            cin>>a;
+            code+=a*b[j];
+        }
+        if (code>0)ans++;
+    }
+    cout<<ans<<endl;
+
+}
+```
