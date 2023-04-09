@@ -84,3 +84,15 @@ int main(){
     }
 }
 ```
+## 6-	Beginner Contest 192 A
+Problem Link:
+https://atcoder.jp/contests/abc192/tasks/abc192_a
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int x;
+    cin>>x;
+    cout<<((x/100+1)*100-x)<<endl;
+}
+```
