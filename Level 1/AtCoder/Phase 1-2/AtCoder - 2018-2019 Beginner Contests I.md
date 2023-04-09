@@ -53,3 +53,16 @@ int main(){
     }
 }
 ```
+## 4- Beginner Contest 120 A
+Problem Link:
+https://atcoder.jp/contests/abc120/tasks/abc120_a
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b,c;
+    cin>>a>>b>>c;
+    cout<<min(c,b/a)<<endl;
+}
+```
