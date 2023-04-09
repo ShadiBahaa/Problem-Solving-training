@@ -68,3 +68,19 @@ int main(){
     }
 }
 ```
+## 5-	Beginner Contest 191 A
+Problem Link:
+https://atcoder.jp/contests/abc191/tasks/abc191_a
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    double v,t,s,d;
+    cin>>v>>t>>s>>d;
+    if (d/v <t || d/v>s){
+        cout<<"Yes"<<endl;
+    }else {
+        cout<<"No"<<endl;
+    }
+}
+```
