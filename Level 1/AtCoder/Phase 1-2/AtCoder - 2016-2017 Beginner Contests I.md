@@ -64,3 +64,15 @@ int main(){
     else cout<<"Possible"<<endl;
 }
 ```
+## 5- Beginner Contest 68 A
+Problem Link:
+https://atcoder.jp/contests/abc068/tasks/abc068_a
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+    cout<<"ABC"<<s<<endl;
+}
+```
