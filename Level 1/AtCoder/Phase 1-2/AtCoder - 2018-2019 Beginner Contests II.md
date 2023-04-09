@@ -14,3 +14,29 @@ int main(){
     cout<<((accumulate(arr,arr+n-1,0)>arr[n-1])?"Yes":"No")<<endl;
 }
 ```
+## 2- Beginner Contest 118 B
+Problem Link:
+https://atcoder.jp/contests/abc118/tasks/abc118_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,m;
+    cin>>n>>m;
+    map<int,int> mp;
+    for (int i = 0; i<n ;++i){
+        int k;
+        cin>>k;
+        while (k--){
+            int a;
+            cin>>a;
+            mp[a]++;
+        }
+    }
+    int ans = 0;
+    for (pair<int,int> pa:mp){
+        if (pa.second==n)ans++;
+    }
+    cout<<ans<<endl;
+}
+```
