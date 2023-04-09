@@ -130,3 +130,45 @@ int main(){
     cout<<"Yes"<<endl;
 }
 ```
+## 7-	Beginner Contest 194 B
+Problem Link:
+https://atcoder.jp/contests/abc194/tasks/abc194_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int a[n],b[n];
+    int ans = INT_MAX;
+    for (int i = 0; i<n; ++i){
+        cin>>a[i]>>b[i];
+        ans = min(ans,a[i]+b[i]);
+    }
+    int aa = min_element(a,a+n)-a;
+    int ba = INT_MAX;
+    for (int i = 0; i<n ; ++i){
+        if (i==aa)continue;
+        if (ba==INT_MAX){
+            ba = i;continue;
+        }
+        if (b[i]<b[ba]){
+            ba = i;
+        }
+    }
+    ans = min(ans,max(a[aa],b[ba]));
+    int bb = min_element(b,b+n)-b;
+    int ab = INT_MAX;
+    for (int i = 0; i<n ; ++i){
+        if (i==bb)continue;
+        if (ab==INT_MAX){
+            ab = i;continue;
+        }
+        if (a[i]<a[ab]){
+            ab = i;
+        }
+    }
+    ans = min(ans,max(b[bb],a[ab]));
+    cout<<ans<<endl;
+}
+```
