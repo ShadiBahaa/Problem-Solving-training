@@ -25,3 +25,23 @@ int main(){
     cout<<ans<<endl;
 }
 ```
+## 2- Beginner Contest 188 B
+Problem Link:
+https://atcoder.jp/contests/abc188/tasks/abc188_b
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int a[n];
+    int sum = 0;
+    for (int i = 0; i<n; ++i)cin>>a[i];
+    for (int i = 0; i<n; ++i){
+        int b;
+        cin>>b;
+        sum+=a[i]*b;
+    }
+    cout<<((sum==0)?"Yes":"No")<<endl;
+}
+```
