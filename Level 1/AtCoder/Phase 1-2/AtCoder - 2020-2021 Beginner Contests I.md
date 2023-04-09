@@ -28,3 +28,19 @@ int main(){
     cout<<((min(x,y)+3>max(x,y))?"Yes":"No")<<endl;
 }
 ```
+## 3-	Beginner Contest 189 A
+Problem Link:
+https://atcoder.jp/contests/abc189/tasks/abc189_a
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    cin>>s;
+    if (s[1]==s[0] && s[2]==s[1]){
+        cout<<"Won"<<endl;
+    }else {
+        cout<<"Lost"<<endl;
+    }
+}
+```
