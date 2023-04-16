@@ -99,3 +99,27 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 6- Round 350 B
+Problem link: https://codeforces.com/problemset/problem/670/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n,k;
+    cin>>n>>k;
+    long long arr[n];
+    for (long long i = 0; i<n; ++i){
+        cin>>arr[i];
+    }
+    for (long long x = 1; x<=100000; ++x){
+        long long det = x*(x+1)/2;
+        if (det>=k){
+            long long dif = det - k;
+            x-=dif;
+            cout<<arr[x-1]<<endl;
+            return 0;
+        }
+    }
+}
+```
