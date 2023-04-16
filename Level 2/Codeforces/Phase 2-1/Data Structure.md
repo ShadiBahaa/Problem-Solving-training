@@ -64,3 +64,29 @@ int main()
     cout<<endl;
 }
 ```
+## 3- Round 215 B
+Problem link: https://codeforces.com/problemset/problem/368/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    int arr[n];
+    int ans[n];
+    for (int i = 0; i<n; ++i){
+        cin>>arr[i];
+    }
+    set<int> s;
+    for (int i = n-1; i>=0 ; --i){
+        s.insert(arr[i]);
+        ans[i] = s.size();
+    }
+    while (m--){
+        int x;
+        cin>>x;
+        cout<<ans[x-1]<<endl;
+    }
+}
+```
