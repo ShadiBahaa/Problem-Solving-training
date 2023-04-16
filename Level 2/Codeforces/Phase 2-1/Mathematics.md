@@ -15,3 +15,22 @@ int main()
     cout<<ans<<endl;
 }
 ```
+# Mathematics
+## 2- Round 126 B
+Problem link: https://codeforces.com/problemset/problem/200/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int sum = 0;
+    for (int i = 0; i<n; ++i){
+        int x;
+        cin>>x;
+        sum+=x;
+    }
+    cout<<fixed<<setprecision(12)<<double(sum)/n<<endl;
+}
+```
