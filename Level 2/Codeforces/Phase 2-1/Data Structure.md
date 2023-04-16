@@ -154,3 +154,35 @@ int main()
     cout<<index<<endl;
 }
 ```
+## 6- Round 140 B
+Problem link: https://codeforces.com/problemset/problem/227/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    ios_base::sync_with_stdio(0),cin.tie(0),cout.tie(0);
+    int n;
+    cin>>n;
+    vector<pair<int,int>> s;
+    for (int i = 1; i<=n ; ++i){
+        int x;
+        cin>>x;
+        s.push_back({x,i});
+    }
+    sort(s.begin(),s.end());
+
+    int m;
+    cin>>m;
+    long long cnt1 = 0;
+    long long cnt2 = 0;
+    while (m--){
+        int d;
+        cin>>d;
+        pair<int,int> p = {d,1};
+        auto it = lower_bound(s.begin(),s.end(),p);
+        cnt1+= (it->second);
+        cnt2+= (n-(it->second)+1);
+    }
+    cout<<cnt1<<" "<<cnt2<<"\n";
+}
+```
