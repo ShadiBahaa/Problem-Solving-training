@@ -119,3 +119,38 @@ int main(){
     }
 }
 ```
+## 5-	Round 211 B
+Problem link: https://codeforces.com/problemset/problem/363/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,k;
+    cin>>n>>k;
+    int arr[n];
+    for (int i = 0; i<n; ++i){
+        cin>>arr[i];
+    }
+    int first = 0;
+    long long minsum = 0;
+    for (int i = 0; i<k; ++i){
+        minsum+=arr[i];
+    }
+    //cout<<sum<<endl;
+    int index = 1;
+    long long sum = minsum;
+    for (int i = k; i<n; ++i){
+        long long cursum = sum - arr[first]+arr[i];
+        ++first;
+        //cout<<cursum<<" ";
+        if (cursum<minsum){
+            index = first+1;
+            minsum = cursum;
+        }
+        //cout<<index<<endl;
+        sum = cursum;
+    }
+    cout<<index<<endl;
+}
+```
