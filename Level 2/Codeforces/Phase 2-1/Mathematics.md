@@ -15,7 +15,6 @@ int main()
     cout<<ans<<endl;
 }
 ```
-# Mathematics
 ## 2- Round 126 B
 Problem link: https://codeforces.com/problemset/problem/200/B
 ```cpp
