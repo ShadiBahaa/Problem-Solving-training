@@ -66,3 +66,36 @@ int main()
     cout<<n*n*(n-1)/2 - (n-1)*n*(2*n-1)/6 + n<<endl;
 }
 ```
+## 5- Round 255 B
+Problem link: https://codeforces.com/problemset/problem/447/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+bool by (pair<char,int> &a, pair<char,int> &b){
+    return a.second>b.second;
+}
+int main()
+{
+    string s;
+    cin>>s;
+    int k;
+    cin>>k;
+    vector<pair<char,int>> v(26);
+    for (int i = 0; i<26; ++i){
+        cin>>v[i].second;
+        v[i].first = 'a' + i;
+    }
+    vector<pair<char,int>> v2 = v;
+    sort(v.begin(),v.end(),by);
+    int i = 1;
+    int ans = 0;
+    while (k--){
+        ans += v[0].second*(k+s.size()+1);
+    }
+    for (char c:s){
+        ans += v2[c-'a'].second*i;
+        i++;
+    }
+    cout<<ans<<endl;
+}
+```
