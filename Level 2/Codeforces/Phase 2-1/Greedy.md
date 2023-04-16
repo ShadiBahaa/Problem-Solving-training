@@ -37,3 +37,35 @@ int main()
     cout<<endl;
 }
 ```
+## 3- Round 16 B
+Problem link: https://codeforces.com/problemset/problem/16/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+bool by(pair<int,int> a, pair<int,int> b){
+    return a.second>b.second;
+}
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    pair<int,int> arr[m];
+    for (int i = 0; i<m; ++i){
+        cin>>arr[i].first>>arr[i].second;
+    }
+    sort(arr,arr+m,by);
+    int rem = n;
+    long long res = 0;
+    for (int i = 0; i<m; ++i){
+        if (arr[i].first<=rem){
+            rem-=arr[i].first;
+            res+=(arr[i].first*arr[i].second);
+        }else {
+            res+=(rem*arr[i].second);
+            rem = 0;
+            break;
+        }
+    }
+    cout<<res<<endl;
+}
+```
