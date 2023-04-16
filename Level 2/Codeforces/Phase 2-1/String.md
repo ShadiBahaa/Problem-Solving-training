@@ -127,3 +127,54 @@ int main(){
     cout<<endl;
 }
 ```
+## 6- Round 387 B
+Problem link: https://codeforces.com/problemset/problem/747/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    string s;
+    cin>>n>>s;
+    if (n%4)
+    {
+        cout<<"==="<<endl;
+        return 0;
+    }
+    map<char,int> mp;
+    mp['A'] = mp['G'] = mp['C'] = mp['T'] = 0;
+    for (int i = 0; i<s.size(); ++i)
+    {
+        if (s[i]!='?')
+        {
+            mp[s[i]]++;
+            if (mp[s[i]]>(n/4))
+            {
+                cout<<"==="<<endl;
+                return 0;
+            }
+        }
+    }
+    for (int i = 0; i<s.size(); ++i)
+    {
+        if (s[i]=='?')
+        {
+            for (auto &pa:mp)
+            {
+                if ((pa.second)<(n/4))
+                {
+                    cout<<pa.first;
+                    pa.second++;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            cout<<s[i];
+        }
+    }
+    cout<<endl;
+}
+```
