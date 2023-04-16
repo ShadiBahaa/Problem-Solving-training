@@ -118,3 +118,37 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 6-	Round 145 B
+Problem link: https://codeforces.com/problemset/problem/234/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+bool cmp(pair<int,int> &a, pair<int,int> &b){
+    return a.second>b.second;
+}
+int main()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+    int n,k;
+    cin>>n>>k;
+    vector<pair<int,int>> v(n);
+    for (int i = 0; i<n; ++i){
+        cin>>v[i].second;
+        v[i].first = i+1;
+    }
+    sort(v.begin(),v.end(),cmp);
+    vector<int> ans;
+    for (int i = 0; i<k ; ++i){
+        if (i==k-1){
+            cout<<v[i].second<<endl;
+        }
+        ans.push_back(v[i].first);
+    }
+    sort(ans.begin(),ans.end());
+    for (auto ind:ans){
+        cout<<ind<<" ";
+    }
+    cout<<endl;
+}
+```
