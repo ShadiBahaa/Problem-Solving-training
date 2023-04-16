@@ -100,3 +100,30 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 5- Round 386 B
+Problem link: https://codeforces.com/problemset/problem/746/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    string c;
+    cin>>c;
+    deque<char> d;
+    bool ff = true;
+    if (c.size()%2==0)ff= false;
+    for (int i = 0; i<c.size(); ++i){
+        if (ff){
+            d.push_back(c[i]);
+        }else {
+            d.push_front(c[i]);
+        }
+        ff = !ff;
+    }
+    for (int i = 0; i<d.size(); ++i){
+        cout<<d[i];
+    }
+    cout<<endl;
+}
+```
