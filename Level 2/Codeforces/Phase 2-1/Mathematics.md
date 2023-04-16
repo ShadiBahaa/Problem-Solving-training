@@ -123,3 +123,28 @@ int main()
     }
 }
 ```
+## 7- Round 110 B
+Problem link: https://codeforces.com/problemset/problem/157/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for (int i = 0; i<n ;++i){
+        cin>>arr[i];
+    }
+    double ans = 0;
+    sort(arr,arr+n,greater<int>());
+    for (int i = 0; i<n ; ++i){
+        if (i%2==0){
+            ans += atan(1)*4*arr[i]*arr[i];
+        }else {
+            ans -= atan(1)*4*arr[i]*arr[i];
+        }
+    }
+    cout<<fixed<<setprecision(10)<<ans<<endl;
+}
+```
