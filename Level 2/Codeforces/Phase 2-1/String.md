@@ -195,3 +195,26 @@ int main()
     cout<<max_element(mp.begin(),mp.end(),[](const auto &x,const auto &y){return x.second<y.second;})->first<<endl;
 }
 ```
+## 8- Round 459 B
+Problem link: https://codeforces.com/problemset/problem/918/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    map<string,string> mp;
+    while (n--){
+        string name,ip;
+        cin>>name>>ip;
+        mp[ip] = name;
+    }
+    while (m--){
+        string command,ip;
+        cin>>command>>ip;
+        cout<<command<<" "<<ip<<" #"<<mp[ip.substr(0,ip.size()-1)]<<endl;
+    }
+}
+```
+
