@@ -186,3 +186,29 @@ int main(){
     cout<<cnt1<<" "<<cnt2<<"\n";
 }
 ```
+## 7- Round 149 B
+Problem link: https://codeforces.com/problemset/problem/242/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int lmin = INT_MAX;
+    int rmax = INT_MIN;
+    int x[n],y[n];
+    for (int i = 0; i<n; ++i){
+        cin>>x[i]>>y[i];
+        lmin = min(lmin,x[i]);
+        rmax = max(rmax,y[i]);
+    }
+    for (int i = 0; i<n; ++i){
+        if (x[i]==lmin && rmax==y[i]){
+            cout<<i+1<<endl;
+            return 0;
+        }
+    }
+    cout<<-1<<endl;
+}
+```
