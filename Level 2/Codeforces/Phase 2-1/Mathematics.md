@@ -171,3 +171,27 @@ int main(){
     cout<<ans<<endl;
 }
 ```
+## 9- Round 477 B
+Problem link: https://codeforces.com/problemset/problem/967/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n,a,b;
+    cin>>n>>a>>b;
+    long long sum = 0;
+    long long arr[n];
+    for (int i = 0; i<n; ++i)cin>>arr[i],sum+=arr[i];
+    sort(arr+1,arr+n);
+    long long stot = arr[0];
+    int i = 1;
+    while (i<n){
+        if (a*arr[0]>=b*(stot+arr[i])){
+            stot+=arr[i];
+        }else break;
+        i++;
+    }
+    cout<<n-i<<endl;
+}
+```
