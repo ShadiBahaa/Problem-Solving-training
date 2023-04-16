@@ -148,3 +148,26 @@ int main()
     cout<<fixed<<setprecision(10)<<ans<<endl;
 }
 ```
+## 8- Round 396 B
+Problem link: https://codeforces.com/problemset/problem/766/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string ans = "NO";
+    int n;
+    cin>>n;
+    int arr[n];
+    for (int i = 0;i<n; ++i){
+        cin>>arr[i];
+    }
+    sort(arr,arr+n,greater<int>());
+    for (int i = n-1; i>=2; --i){
+        if (arr[i]<arr[i-1]+arr[i-2] && arr[i-1]<arr[i]+arr[i-2] && arr[i-2]<arr[i-1]+arr[i]){
+            ans = "YES";
+            break;
+        }
+    }
+    cout<<ans<<endl;
+}
+```
