@@ -54,3 +54,15 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 4- Round 164 B
+Problem link: https://codeforces.com/problemset/problem/268/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n;
+    cin>>n;
+    cout<<n*n*(n-1)/2 - (n-1)*n*(2*n-1)/6 + n<<endl;
+}
+```
