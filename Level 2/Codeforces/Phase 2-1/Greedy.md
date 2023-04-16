@@ -89,3 +89,32 @@ int main()
     cout<<-sum<<endl;
 }
 ```
+## 5- Round 491 B
+Problem link: https://codeforces.com/problemset/problem/991/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for (int i = 0; i<n; ++i)cin>>arr[i];
+    int sum = accumulate(arr,arr+n,0);
+    sort(arr,arr+n);
+    int i = 0;
+    int ans = 0;
+    while (i<n){
+        if (int(round(double(sum)/n)) >= 5){
+            cout<<ans<<endl;
+            return 0;
+        }
+        if (arr[i]!=5){
+            sum+=5-arr[i];
+            ans++;
+        }
+        i++;
+    }
+    cout<<ans<<endl;
+}
+```
