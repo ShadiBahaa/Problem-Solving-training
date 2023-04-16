@@ -178,3 +178,20 @@ int main()
     cout<<endl;
 }
 ```
+## 7- Round 479 B
+Problem link: https://codeforces.com/problemset/problem/977/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    string s;
+    cin>>n>>s;
+    map<string,int> mp;
+    for (int i = 0; i<s.size()-1; ++i){
+        mp[s.substr(i,2)]++;
+    }
+    cout<<max_element(mp.begin(),mp.end(),[](const auto &x,const auto &y){return x.second<y.second;})->first<<endl;
+}
+```
