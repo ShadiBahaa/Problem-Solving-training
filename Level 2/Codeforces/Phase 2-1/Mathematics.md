@@ -195,3 +195,25 @@ int main()
     cout<<n-i<<endl;
 }
 ```
+## 10- Round 299 B
+Problem link: https://codeforces.com/problemset/problem/535/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string n;
+    cin>>n;
+    long long ans = 0;
+    ans = ((n[0]=='4')?1:2);
+    for (int i = 1; i<n.size(); ++i){
+        if (n[i]=='4'){
+            ans*=2;
+            ans+=1;
+        }else {
+            ans*=2;
+            ans+=2;
+        }
+    }
+    cout<<ans<<endl;
+}
+```
