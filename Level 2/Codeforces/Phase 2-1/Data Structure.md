@@ -90,3 +90,32 @@ int main()
     }
 }
 ```
+## 4-	Round 367 B
+Problem link: https://codeforces.com/problemset/problem/706/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    vector<int> arr;
+    for (int i = 0 ; i<n; i++){
+        int x;
+        cin>>x;
+        arr.push_back(x);
+    }
+    int q;
+    cin>>q;
+    sort(arr.begin(),arr.end());
+    while (q--){
+        int i;
+        cin>>i;
+        auto it = upper_bound(arr.begin(),arr.end(),i);
+        if (it == arr.end()){
+            cout<<arr.size()<<endl;
+        }else {
+            cout<<it-arr.begin()<<endl;
+        }
+    }
+}
+```
