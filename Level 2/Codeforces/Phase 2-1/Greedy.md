@@ -238,3 +238,27 @@ int main(){
     cout<<ans<<endl;
 }
 ```
+## 10-	Round 98 B
+Problem link: https://codeforces.com/problemset/problem/137/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    map<int,int> mp;
+    for (int i = 0; i<n; ++i){
+        int x;
+        cin>>x;
+        mp[x]++;
+        mp[i+1]--;
+    }
+    int ans = 0;
+    for (auto it:mp){
+        if (it.first >=1 && it.first<=n && it.second<0){
+            ans++;
+        }
+    }
+    cout<<ans<<endl;
+}
+```
