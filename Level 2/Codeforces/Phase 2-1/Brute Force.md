@@ -52,3 +52,36 @@ int main(){
     }
 }
 ```
+## 3-	Round 93 B
+Problem link: https://codeforces.com/problemset/problem/127/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,x;
+    cin>>n;
+    map<int,int> mp;
+    for (int i = 0; i<n; ++i)
+    {
+        cin>>x;
+        mp[x]++;
+    }
+    bool half = false;
+    int ans = 0;
+    for (auto it:mp)
+    {
+        if (it.second >= 4)
+        {
+            ans+=it.second/4;
+            if (it.second%4 >=2){
+                if (half==true)ans++,half = false;
+                else half = true;
+            }
+        }
+        else if (it.second >= 2 && !half)half = true;
+        else if (it.second >= 2 && half)ans++,half = false;
+    }
+    cout<<ans<<endl;
+}
+```
