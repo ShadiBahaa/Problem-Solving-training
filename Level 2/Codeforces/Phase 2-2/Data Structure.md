@@ -45,3 +45,25 @@ int main()
     }
 }
 ```
+## 3- Round 251 B:
+Problem link: https://codeforces.com/problemset/problem/439/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n,x;
+    cin>>n>>x;
+    long long arr[n];
+    for (int i = 0; i<n; ++i){
+        cin>>arr[i];
+    }
+    sort(arr,arr+n);
+    long long ans = 0;
+    for (int i = 0; i<n; ++i){
+        ans += x*arr[i];
+        if (x>1)x--;
+    }
+    cout<<ans<<endl;
+}
+```
