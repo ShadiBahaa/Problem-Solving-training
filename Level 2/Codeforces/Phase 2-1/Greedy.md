@@ -178,3 +178,38 @@ int main(){
     cout<<ans<<endl;
 }
 ```
+## 8-	Round 356 B
+Problem link: https://codeforces.com/problemset/problem/680/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,a;
+    cin>>n>>a;
+    int arr[n+2]{};
+    for (int i = 1; i<=n; ++i){
+        cin>>arr[i];
+    }
+    int cnt = 0;
+    int i = a;
+    if (arr[i])cnt++;
+    int j = a;
+    while (i>=1 && j<=n){
+        i--;
+        j++;
+        if (arr[i] && arr[j]){
+            cnt+=2;
+        }
+    }
+    while (i>=1){
+        if (arr[i])cnt++;
+        i--;
+    }
+    while (j<=n){
+        if (arr[j])cnt++;
+        j++;
+    }
+    cout<<cnt<<endl;
+}
+```
