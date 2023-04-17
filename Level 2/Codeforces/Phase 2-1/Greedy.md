@@ -152,3 +152,29 @@ int main()
     cout<<endl;
 }
 ```
+## 7-	Round 265 B
+Problem link: https://codeforces.com/problemset/problem/465/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,x;
+    cin>>n;
+    vector<int> v;
+    for (int i = 1; i<=n; ++i){
+        cin>>x;
+        if (x)v.push_back(i);
+    }
+    if (v.size()==0){
+        cout<<0<<endl;
+        return 0;
+    }
+    int ans = 1;
+    for (int i = 1; i<v.size(); ++i){
+        if (v[i]-v[i-1]>1){
+            ans+=2;
+        }else ans++;
+    }
+    cout<<ans<<endl;
+}
+```
