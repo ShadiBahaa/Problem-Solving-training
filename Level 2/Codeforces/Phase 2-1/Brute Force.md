@@ -85,3 +85,23 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 4-	Round 91 B
+Problem link: https://codeforces.com/problemset/problem/122/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<char,int> mp;
+    string s;
+    cin>>s;
+    for (char c:s)mp[c]++;
+    if (mp['4']==mp['7'] && mp['4']==0){
+        cout<<-1<<endl;
+    }else if (mp['7']>mp['4']){
+        cout<<7<<endl;
+    }else {
+        cout<<4<<endl;
+    }
+}
+```
