@@ -213,3 +213,28 @@ int main()
     cout<<cnt<<endl;
 }
 ```
+## 9-	Round 197 B
+Problem link: https://codeforces.com/problemset/problem/339/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    long long n,m;
+    cin>>n>>m;
+    long long arr[m];
+    for (int i = 0; i<m; ++i){
+        cin>>arr[i];
+    }
+    long long init = 1;
+    long long ans = 0;
+    for (int i = 0; i<m; ++i){
+        if (arr[i]>=init){
+            ans+= arr[i]-init;
+        }else {
+            ans+= arr[i]-init + n;
+        }
+        init = arr[i];
+    }
+    cout<<ans<<endl;
+}
+```
