@@ -25,3 +25,23 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 2- Round 246 B:
+Problem link: https://codeforces.com/problemset/problem/432/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int x[n],y[n];
+    map<int,int> cnt;
+    for (int i = 0; i<n; ++i){
+        cin>>x[i]>>y[i];
+        cnt[x[i]]++;
+    }
+    for (int i = 0; i<n; ++i){
+        cout<<(n-1)+cnt[y[i]]<<" "<<(n-1)-cnt[y[i]]<<endl;
+    }
+}
+```
