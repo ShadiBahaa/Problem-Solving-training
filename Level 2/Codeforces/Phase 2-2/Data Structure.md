@@ -67,3 +67,30 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 4- Round 315 B
+Problem link: https://codeforces.com/problemset/problem/569/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    vector<int> v(n);
+    set<int> s1;
+    multiset<int> ms;
+    for (int i = 0; i<n; ++i)cin>>v[i],s1.insert(i+1),ms.insert(v[i]);
+    int num = 1;
+    for (int i = 0; i<n; ++i){
+        if (s1.count(v[i])){
+            s1.erase(v[i]);
+        }else {
+            while (ms.count(num))num++;
+            v[i] = num;
+            num++;
+        }
+        cout<<v[i]<<" ";
+    }
+    cout<<endl;
+}
+```
