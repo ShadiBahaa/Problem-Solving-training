@@ -128,3 +128,34 @@ int main()
     cout<<res<<endl;
 }
 ```
+## 6- Round 187 B
+Problem link: https://codeforces.com/problemset/problem/315/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    int arr[n+5]{};
+    for (int i = 1; i<=n; ++i)cin>>arr[i];
+    int add = 0;
+    while (m--){
+        int type;
+        cin>>type;
+        if (type==1){
+            int v,x;
+            cin>>v>>x;
+            arr[v] = x - add;
+        }else if (type==2){
+            int y;
+            cin>>y;
+            add += y;
+        }else {
+            int q;
+            cin>>q;
+            cout<<arr[q] + add<<endl;
+        }
+    }
+}
+```
