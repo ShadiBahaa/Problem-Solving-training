@@ -94,3 +94,37 @@ int main()
     cout<<endl;
 }
 ```
+## 5- Round 345 B
+Problem link: https://codeforces.com/problemset/problem/651/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    set<int> s;
+    vector<int> ans;
+    vector<int> v(n);
+    for (int i = 0; i<n; ++i)cin>>v[i];
+    sort(v.begin(),v.end());
+    int res = 0;
+    for (int i = 0; i<n; ++i){
+        if (s.count(i))continue;
+        s.insert(i);
+        ans.push_back(v[i]);
+        int now = v[i];
+        for (int j = i+1; j<n; ++j){
+            if (!s.count(j) && v[j]>now){
+                s.insert(j);
+                ans.push_back(v[j]);
+                now = v[j];
+            }
+        }
+    }
+    for (int i = 1; i<ans.size(); ++i){
+        if (ans[i]>ans[i-1])res++;
+    }
+    cout<<res<<endl;
+}
+```
