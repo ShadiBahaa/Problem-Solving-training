@@ -159,3 +159,35 @@ int main()
     }
 }
 ```
+## 7- Round 248 B
+Problem link: https://codeforces.com/problemset/problem/433/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    int arr[n+5]{};
+    for (int i = 1; i<=n; ++i)cin>>arr[i];
+    int add = 0;
+    while (m--){
+        int type;
+        cin>>type;
+        bool type2 = false;
+        if (type==1){
+            int v,x;
+            cin>>v>>x;
+            arr[v] = x - add;
+        }else if (type==2){
+            int y;
+            cin>>y;
+            add += y;
+        }else {
+            int q;
+            cin>>q;
+            cout<<arr[q] + add<<endl;
+        }
+    }
+}
+```
