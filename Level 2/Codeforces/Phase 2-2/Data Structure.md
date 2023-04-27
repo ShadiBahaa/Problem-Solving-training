@@ -166,27 +166,34 @@ Problem link: https://codeforces.com/problemset/problem/433/B
 using namespace std;
 int main()
 {
-    int n,m;
-    cin>>n>>m;
-    int arr[n+5]{};
-    for (int i = 1; i<=n; ++i)cin>>arr[i];
-    int add = 0;
-    while (m--){
-        int type;
-        cin>>type;
-        bool type2 = false;
-        if (type==1){
-            int v,x;
-            cin>>v>>x;
-            arr[v] = x - add;
-        }else if (type==2){
-            int y;
-            cin>>y;
-            add += y;
-        }else {
-            int q;
-            cin>>q;
-            cout<<arr[q] + add<<endl;
+    int n;
+    cin>>n;
+    long long arr[n+1] {};
+    long long ord[n+1] {};
+    for (int i = 1; i<=n; ++i)
+    {
+        cin>>arr[i];
+        ord[i] = arr[i];
+        arr[i]+=arr[i-1];
+        //ord[i-1]=arr[i];
+    }
+    sort(ord+1,ord+n+1);
+    for (int i = 1; i<=n; ++i){
+        ord[i]+=ord[i-1];
+    }
+    int q;
+    cin>>q;
+    while (q--)
+    {
+        int l,r,t;
+        cin>>t>>l>>r;
+        if (t==1)
+        {
+            cout<<arr[r]-arr[l-1]<<endl;
+        }
+        else
+        {
+            cout<<ord[r]-ord[l-1]<<endl;
         }
     }
 }
