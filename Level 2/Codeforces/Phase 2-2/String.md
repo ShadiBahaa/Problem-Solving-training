@@ -111,3 +111,23 @@ int main()
     else cout<<ans<<endl;
 }
 ```
+## 4- Round 309 B:
+Problem link: https://codeforces.com/problemset/problem/554/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    map<string,int> mp;
+    for (int i = 0; i<n; ++i){
+        string s;
+        cin>>s;
+        mp[s]++;
+    }
+    int ans = 0;
+    for (pair<string,int> p:mp)ans = max(ans,p.second);
+    cout<<ans<<endl;
+}
+```
