@@ -63,3 +63,24 @@ int main()
     }
 }
 ```
+## 2- Round 156 B:
+Problem link: https://codeforces.com/problemset/problem/255/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    map<char,int> mp;
+    for (char c:s){
+        mp[c]++;
+    }
+    if (mp['x']>mp['y']){
+        for (int i = 0; i<(mp['x']-mp['y']); ++i)cout<<'x';
+    }else {
+        for (int i = 0; i<(mp['y']-mp['x']); ++i)cout<<'y';
+    }
+    cout<<endl;
+}
+```
