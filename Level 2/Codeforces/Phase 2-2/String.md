@@ -84,3 +84,30 @@ int main()
     cout<<endl;
 }
 ```
+## 3- Round 239 B:
+Problem link: https://codeforces.com/problemset/problem/408/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<char,int> mp1;
+    map<char,int> mp2;
+    string n,m;
+    cin>>n>>m;
+    int ans = 0;
+    for (char c:n)mp1[c]++;
+    for (char c:m)mp2[c]++;
+    for (int i = 0; i<26; ++i)
+    {
+        if (mp1[i+'a'] && mp2[i+'a'])ans += min(mp1[i+'a'],mp2[i+'a']);
+        else if (!mp1[i+'a'] && mp2[i+'a'])
+        {
+            ans = 0;
+            break;
+        }
+    }
+    if (ans==0)cout<<-1<<endl;
+    else cout<<ans<<endl;
+}
+```
