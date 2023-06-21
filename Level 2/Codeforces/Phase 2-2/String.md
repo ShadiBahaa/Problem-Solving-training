@@ -131,3 +131,36 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 5- Round 327 B:
+Problem link: https://codeforces.com/problemset/problem/591/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    string s;
+    cin>>s;
+    map<char,char> mp;
+    for (char i = 'a'; i<='z'; ++i)
+    {
+        mp[i] = i;
+    }
+    while (m--)
+    {
+        char x,y;
+        cin>>x>>y;
+        for (char i = 'a'; i<='z'; ++i)
+        {
+            if (mp[i]==x)mp[i] = y;
+            else if (mp[i]==y)mp[i] = x;
+        }
+    }
+    for (char &c:s)
+    {
+        c = mp[c];
+    }
+    cout<<s<<endl;
+}
+```
