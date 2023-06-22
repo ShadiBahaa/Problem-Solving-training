@@ -112,5 +112,31 @@ int main()
     }
     cout<<-1<<endl;
 }
+```
+## 4- Round 247 B:
+Problem link: https://codeforces.com/problemset/problem/431/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int v[5][5];
+    for (int i = 0; i<5; ++i){
+        for (int j = 0; j<5; ++j){
+            cin>>v[i][j];
+        }
+    }
+    int ans = 0;
+    vector<int> arr {0,1,2,3,4};
+    do {
+            int tmp = 0;
+            tmp+= v[arr[0]][arr[1]] + v[arr[1]][arr[0]] + v[arr[2]][arr[3]] + v[arr[3]][arr[2]];
+            tmp+= v[arr[1]][arr[2]] + v[arr[2]][arr[1]] + v[arr[3]][arr[4]] + v[arr[4]][arr[3]];
+            tmp+= v[arr[2]][arr[3]] + v[arr[3]][arr[2]];
+            tmp+= v[arr[3]][arr[4]] + v[arr[4]][arr[3]];
+            ans = max(ans,tmp);
 
+    }while (next_permutation(arr.begin(),arr.end()));
+    cout<<ans<<endl;
+}
 ```
