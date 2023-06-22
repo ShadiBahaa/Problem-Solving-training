@@ -82,3 +82,35 @@ int main()
     cout<<mini<<" "<<maxi<<endl;
 }
 ```
+## 3- Round 242 B:
+Problem link: https://codeforces.com/problemset/problem/424/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+bool by(vector<int> a, vector<int> b){
+    return (a[0]*a[0] + a[1]*a[1]) < (b[0]*b[0] + b[1]*b[1]) ;
+}
+int main()
+{
+    int n,s;
+    cin>>n>>s;
+    vector<vector<int>> v (n,vector<int>(3));
+    for (int i = 0; i<n; ++i){
+        int x,y,k;
+        cin>>x>>y>>k;
+        v[i]={abs(x),abs(y),k};
+    }
+    sort(v.begin(), v.end(), by);
+    int need = 1000000 - s;
+    int sum = 0;
+    for (int i = 0; i<v.size(); ++i){
+        sum += v[i][2];
+        if (sum >= need){
+            cout<<fixed<<setprecision(7)<<sqrt(v[i][0]*v[i][0] + v[i][1]*v[i][1])<<endl;
+            return 0;
+        }
+    }
+    cout<<-1<<endl;
+}
+
+```
