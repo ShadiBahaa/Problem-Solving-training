@@ -242,3 +242,41 @@ int main()
     cout<<endl;
 }
 ```
+## 7- Round 180 B:
+Problem link: https://codeforces.com/problemset/problem/298/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long t,sx,sy,ex,ey;
+    cin>>t>>sx>>sy>>ex>>ey;
+    string d;
+    cin>>d;
+    long long x_res = ex - sx;
+    long long y_res = ey - sy;
+    map<char,int> mp;
+    if (x_res < 0)
+    {
+        mp['W'] += abs(x_res);
+    }
+    else mp['E'] += x_res;
+    if (y_res < 0)
+    {
+        mp['S'] += abs(y_res);
+    }
+    else mp['N'] += y_res;
+    if (!mp['N'] && !mp['E'] && !mp['W'] && !mp['S']){
+        cout<<0<<endl;
+        return 0;
+    }
+    for (int i = 0; i<d.size(); ++i){
+        if (mp[d[i]])mp[d[i]]--;
+        if (!mp['N'] && !mp['E'] && !mp['W'] && !mp['S']){
+            cout<<i+1<<endl;
+            return 0;
+        }
+    }
+    cout<<-1<<endl;
+}
+```
