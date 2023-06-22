@@ -164,3 +164,81 @@ int main()
     cout<<s<<endl;
 }
 ```
+## 6- Round 107 B:
+Problem link: https://codeforces.com/problemset/problem/151/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    map<int,vector<string>> girls;
+    map<int,vector<string>> taxis;
+    map<int,vector<string>> pizzas;
+    int girl = 0;
+    int taxi = 0;
+    int other = 0;
+    while (n--)
+    {
+        int si;
+        string name;
+        cin>>si>>name;
+        int girr = 0;
+        int taxx = 0;
+        int othh = 0;
+        for (int i = 0; i<si; ++i)
+        {
+            string tmp;
+            cin>>tmp;
+            bool all = true;
+            bool desc = true;
+            int last = tmp[0];
+            for (int i = 1; i<tmp.size(); ++i)
+            {
+                if (tmp[i]=='-')continue;
+                if (tmp[i]!=last && all)
+                {
+                    all = false;
+                }
+                if (tmp[i]>=last && desc)
+                {
+                    desc = false;
+                }
+                if (!all && !desc)break;
+                last = tmp[i];
+            }
+            if (all)taxx++;
+            else if (desc) othh++;
+            else girr++;
+        }
+        girl = max(girl,girr);
+        taxi = max(taxi,taxx);
+        other = max(other, othh);
+        girls[girr].push_back(name);
+        pizzas[othh].push_back(name);
+        taxis[taxx].push_back(name);
+    }
+    cout<<"If you want to call a taxi, you should call: ";
+    for (int i = 0; i<taxis[taxi].size(); ++i){
+        cout<<taxis[taxi][i];
+        if (i==(int)taxis[taxi].size()-1)cout<<".";
+        else cout<<", ";
+    }
+    cout<<endl;
+    cout<<"If you want to order a pizza, you should call: ";
+    for (int i = 0; i<pizzas[other].size(); ++i){
+        cout<<pizzas[other][i];
+        if (i==(int)pizzas[other].size()-1)cout<<".";
+        else cout<<", ";
+    }
+    cout<<endl;
+    cout<<"If you want to go to a cafe with a wonderful girl, you should call: ";
+    for (int i = 0; i<girls[girl].size(); ++i){
+        cout<<girls[girl][i];
+        if (i==(int)girls[girl].size()-1)cout<<".";
+        else cout<<", ";
+    }
+    cout<<endl;
+}
+```
