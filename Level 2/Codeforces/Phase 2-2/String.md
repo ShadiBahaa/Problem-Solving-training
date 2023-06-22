@@ -280,3 +280,30 @@ int main()
     cout<<-1<<endl;
 }
 ```
+## 8- Round 226 B:
+Problem link: https://codeforces.com/problemset/problem/385/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    string c;
+    cin>>c;
+    vector<int> v;
+    for (int i = 0; i<(int)c.size()-3;++i){
+        if (c.substr(i,4)=="bear"){
+            v.push_back({i+1});
+        }
+    }
+    long long x = 1, y= 0;
+    long long ans = 0;
+    for (int i = 0; i<v.size();++i){
+        y = (int)c.size()-v[i]-2;
+        if (i){
+            x = v[i-1]+1;
+        }
+        x = v[i]-x+1;
+        ans+=(x*y);
+    }
+    cout<<ans<<endl;
+}
+```
