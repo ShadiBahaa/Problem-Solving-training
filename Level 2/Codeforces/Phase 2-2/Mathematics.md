@@ -40,3 +40,45 @@ int main()
     }
 }
 ```
+## 2- Round 235 B:
+Problem link: https://codeforces.com/problemset/problem/401/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    set<int> s;
+    int x,k;
+    cin>>x>>k;
+    for (int i = 1; i<x; ++i)s.insert(i);
+    while(k--){
+        int type;
+        cin>>type;
+        if (type==1){
+            int num2,num1;
+            cin>>num2>>num1;
+            s.erase(num2);
+            s.erase(num1);
+        }else {
+            int num2;
+            cin>>num2;
+            s.erase(num2);
+        }
+    }
+    int maxi = s.size();
+    int mini = 0;
+    auto it = s.begin();
+    while (it!=s.end()){
+        int val = *it;
+        auto it2 = s.lower_bound(val+1);
+        if (it2!=s.end() && *it2==*it+1){
+            s.erase(it2);
+            it = s.erase(it);
+        }else {
+            it++;
+        }
+        mini++;
+    }
+    cout<<mini<<" "<<maxi<<endl;
+}
+```
