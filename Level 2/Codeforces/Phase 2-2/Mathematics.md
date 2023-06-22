@@ -140,3 +140,23 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 5- Round 260 B:
+Problem link: https://codeforces.com/problemset/problem/456/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    cin>>s;
+    int var;
+    if (s.size()==1)var = s.size()-1;
+    else var = s.size()-2;
+    int n = stoi(s.substr(var));
+    if (n%4){
+        cout<<0<<endl;
+    }else {
+        cout<<4<<endl;
+    }
+}
+```
