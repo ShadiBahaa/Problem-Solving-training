@@ -186,3 +186,38 @@ int main(){
     }
 }
 ```
+## 7- Round 381 B:
+Problem link: https://codeforces.com/problemset/problem/740/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    int arr[n]{};
+    vector<int> v;
+    for (int i = 0; i<n; ++i)
+    {
+        cin>>arr[i] ;
+        if (i>0) arr[i]+=arr[i-1];
+    }
+    while (m--)
+    {
+        int l,r;
+        cin>>l>>r;
+        l--,r--;
+        int tmp = arr[r];
+        if (l>0) tmp-=arr[l-1];
+        v.push_back(tmp);
+    }
+    sort(v.begin(),v.end(),greater<int>());
+    int ans = 0;
+    for (int num:v)
+    {
+        if (num<=0)break;
+        ans += num;
+    }
+    cout<<ans<<endl;
+}
+```
