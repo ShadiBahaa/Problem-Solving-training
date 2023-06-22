@@ -160,3 +160,29 @@ int main()
     }
 }
 ```
+## 6- Round 280 B:
+Problem link: https://codeforces.com/problemset/problem/492/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,l;
+    cin>>n>>l;
+    int arr[n]{};
+    for (int i = 0; i<n; ++i){
+        cin>>arr[i];
+    }
+    sort(arr,arr+n);
+    long long sum = 0;
+    priority_queue<int> q;
+    for (int i =1; i<n; ++i){
+        q.push(arr[i]-arr[i-1]);
+    }
+    double mini = max(*min_element(arr,arr+n),l-*max_element(arr,arr+n));
+    if (q.size()&&((double)q.top()/2.0-mini)>=1e-9){
+        cout<<fixed<<setprecision(10)<<(double)q.top()/2.0<<endl;
+    }else {
+        cout<<fixed<<setprecision(10)<<mini<<endl;
+    }
+}
+```
