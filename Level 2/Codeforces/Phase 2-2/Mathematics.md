@@ -221,3 +221,26 @@ int main()
     cout<<ans<<endl;
 }
 ```
+## 8- Round 384 B:
+Problem link: https://codeforces.com/problemset/problem/743/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+long long srch(long long l, long long r, long long index, long long res){
+    long long mid = l+(r-l)/2;
+    if (index > mid){
+        return srch(mid+1,r,index,res-1);
+    }else if (index < mid){
+        return srch(l,mid-1,index,res-1);
+    }else {
+        return res;
+    }
+}
+int main()
+{
+    long long n,k;
+    cin>>n>>k;
+    long long sz = (long long)pow(2,n) -1 ;
+    cout<<srch(1,sz,k,n);
+}
+```
