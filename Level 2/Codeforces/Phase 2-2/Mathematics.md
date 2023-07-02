@@ -294,3 +294,22 @@ int main(){
     }
 }
 ```
+## 11-	Round 200 B:
+Problem link: https://codeforces.com/problemset/problem/344/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    long long a,b,c;
+    cin>>a>>b>>c;
+    long long x,y,z;
+    x=(a+b-c);
+    y=(b+c-a);
+    z=a+c-b;
+    if (x%2 || y%2 || z%2 || x<0 || y<0 || z<0){
+        cout<<"Impossible"<<endl;
+        return 0;
+    }
+    cout<<x/2<<" "<<y/2<<" "<<z/2<<endl;
+}
+```
