@@ -244,3 +244,35 @@ int main()
     cout<<srch(1,sz,k,n);
 }
 ```
+## 9- Round 400 B:
+Problem link: https://codeforces.com/problemset/problem/776/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long n;
+    cin>>n;
+    vector<bool> prime(n+5,true);
+    prime[0] = prime[1] = false;
+    vector<int> color(n+5);
+    int cur = 1;
+    for (long long i = 2 ; i<=(n+1); ++i){
+        if (prime[i]){
+            color[i-1] = cur;
+            cur++;
+            for (long long j = i*i; j<=(n+1);j+=i){
+                prime[j] = false;
+                color[j-1] = cur;
+            }
+            cur = 1;
+        }
+    }
+    if (n<=2)cout<<1<<endl;
+    else cout<<2<<endl;
+    for (int i = 1; i<=n; ++i){
+        cout<<color[i]<<" ";
+    }
+    cout<<endl;
+}
+```
