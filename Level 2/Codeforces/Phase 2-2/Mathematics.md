@@ -276,3 +276,21 @@ int main()
     cout<<endl;
 }
 ```
+## 10-	Round 122 B:
+Problem link: https://codeforces.com/problemset/problem/194/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+long long lcm(long long a, long long b){
+    return a*b/__gcd(a,b);
+}
+int main(){
+    int t;
+    cin>>t;
+    while (t--){
+        long long n;
+        cin>>n;
+        cout<<lcm(n+1,4*n)/(n+1)+1<<endl;
+    }
+}
+```
