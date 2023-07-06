@@ -80,3 +80,26 @@ int main(){
     cout<<ans<<endl;
 }
 ```
+## 4- Round 358 B:
+Problem link: https://codeforces.com/problemset/problem/682/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int cur = 1;
+    int n;
+    cin>>n;
+    int arr[n];
+    for (int i = 0; i<n; ++i)cin>>arr[i];
+    sort(arr, arr+n);
+    for (int i = 0; i<n; ++i)
+    {
+        if (arr[i] >= cur)
+        {
+            cur++;
+        }
+    }
+    cout<<cur<<endl;
+}
+```
