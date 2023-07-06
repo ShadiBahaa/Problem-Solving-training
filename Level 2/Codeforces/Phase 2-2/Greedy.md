@@ -51,3 +51,32 @@ int main(){
     cout<<endl;
 }
 ```
+## 3- Round 323 B:
+Problem link: https://codeforces.com/problemset/problem/583/B
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for (int i = 0; i<n; ++i){
+        cin>>arr[i];
+    }
+    int s = 0;
+    int ans = 0;
+    while (true){
+        for (int i = 0; i<n; ++i){
+            if (s >= arr[i]) arr[i] = 2*n,s++;
+        }
+        if (s==n)break;
+        ans ++;
+        for (int i = n-1; i>=0; --i){
+            if (s >= arr[i]) arr[i] = 2*n,s++;
+        }
+        if (s==n)break;
+        ans ++;
+    }
+    cout<<ans<<endl;
+}
+```
